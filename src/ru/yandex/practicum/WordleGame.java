@@ -131,8 +131,14 @@ public class WordleGame {
             status = GameStatus.LOST;
         }
 
-        log.println("Ход: " + guessWord + ", результат: " + feedback + ", осталось попыток: " + steps + ", состояние: " + status);
+        StringBuilder logMessage = new StringBuilder();
 
+        logMessage.append("Ход: ").append(guessWord)
+                .append(", результат: ").append(feedback)
+                .append(", осталось попыток: ").append(steps)
+                .append(", состояние: ").append(status);
+
+        log.println(logMessage.toString());
         return turn;
     }
 
